@@ -53,7 +53,7 @@ $(document).ready(function () {
             console.log("Punk data:");
             console.log(beerdata);
 
-            for (var i=0; i<beerdata.length; i++) {
+            for (var i = 0; i < beerdata.length; i++) {
                 console.log(beerdata[i].name);
                 console.log(beerdata[i].image_url);
                 console.log("Hops");
@@ -62,11 +62,16 @@ $(document).ready(function () {
                 console.log(beerdata[i].ingredients.malt);
                 console.log("Food Pairing");
                 console.log(beerdata[i].food_pairing);
-            }
 
+
+                $('.list-beers').prepend("<li>" + beerdata[i].name + "</li>").on("click", "li", function () {
+                    // var city = $(this).text();
+                    //get_beerdata;
+                });
+            }
         })
     }
-    
+
 
     function get_spoonacular(menu_item) {
 
@@ -81,7 +86,7 @@ $(document).ready(function () {
 
             console.log(fooddata);
 
-            for (var i=0; i<fooddata.menuItems.length; i++) {
+            for (var i = 0; i < fooddata.menuItems.length; i++) {
                 console.log(fooddata.menuItems[i].restaurantChain);
             }
 
@@ -94,8 +99,8 @@ $(document).ready(function () {
     get_spoonacular("cherry");
 
 
-//
-// Not being used - keeping for reference
+    //
+    // Not being used - keeping for reference
 
     function get_openbrew() {
 
