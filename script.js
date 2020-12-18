@@ -47,32 +47,32 @@ $(document).ready(function () {
 
         $.ajax({
             url: query_string,
-            method: "GET"
-        }).then(function (beerdata) {
+            method: "GET",
+            }).then(function (beerdata) {
+            //suceess: function (beerdata) {
 
-            console.log("Punk data:");
-            console.log(beerdata);
+                console.log("Punk data:");
+                console.log(beerdata);
 
-            for (var i = 0; i < beerdata.length; i++) {
-                console.log(beerdata[i].name);
-                console.log(beerdata[i].image_url);
-                console.log("Hops");
-                console.log(beerdata[i].ingredients.hops);
-                console.log("Malt");
-                console.log(beerdata[i].ingredients.malt);
-                console.log("Food Pairing");
-                console.log(beerdata[i].food_pairing);
-
-
-                $('.list-beers').prepend("<li>" + beerdata[i].name + "</li>").on("click", "li", function () {
-                    // var city = $(this).text();
-                    //get_beerdata;
-                });
-            }
-        })
-    }
+                for (var i = 0; i < beerdata.length; i++) {
+                    console.log(beerdata[i].name);
+                    console.log(beerdata[i].image_url);
+                    console.log("Hops");
+                    console.log(beerdata[i].ingredients.hops);
+                    console.log("Malt");
+                    console.log(beerdata[i].ingredients.malt);
+                    console.log("Food Pairing");
+                    console.log(beerdata[i].food_pairing);
 
 
+                    $('.list-beers').prepend("<li>" + beerdata[i].name + "</li>").on("click", "li", function () {
+                        // var city = $(this).text();
+                        //get_beerdata;
+                    });
+                }
+            })
+        }
+    
     function get_spoonacular(menu_item) {
 
         var query_string = spoonacular_api;
