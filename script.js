@@ -10,7 +10,9 @@ $(document).ready(function () {
     //
     // Examples
 
+    var test_punkbeer_api = "https://api.punkapi.com/v2/beers"
     var punkbeer_api = "https://api.punkapi.com/v2/beers?"
+    var punkbeer_random = "https://api.punkapi.com/v2/beers/random"
     var punkbeer_api_beforedate = "https://api.punkapi.com/v2/beers?brewed_before=11-2012&abv_gt=6";
     var punkbeer_api_name = "https://api.punkapi.com/v2/beers?beer_name=punk";
     var punkbeer_api_food = "https://api.punkapi.com/v2/beers?food=chicken";
@@ -40,16 +42,19 @@ $(document).ready(function () {
         console.log("hops = " + hops_type);
         console.log("malt = " + malt_type);
         if (hops_type)
-            query_string = query_string + "&hops=" + hops_type;
+            if (hops_type === "random")
+                query_string = punkbeer_random;
+            else                
+                query_string = query_string + "hops=" + hops_type;
         if (malt_type)
-            query_string = query_string + "&malt=" + malt_type;
+            query_string = query_string + "malt=" + malt_type;
 
 
         console.log(query_string);
 
         $.ajax({
             url: query_string,
-            //url: punkbeer_api_attribute,
+            //url: test_punkbeer_api,
             method: "GET",
         }).then(function (beerdata) {
             //suceess: function (beerdata) {
@@ -57,16 +62,20 @@ $(document).ready(function () {
             console.log("Punk data:");
             console.log(beerdata);
 
-            //     for (var i = 0; i < beerdata.length; i++) {
-            //         console.log(beerdata[i].name);
-            //         console.log(beerdata[i].image_url);
-            //         console.log("Hops");
-            //         console.log(beerdata[i].ingredients.hops);
-            //         console.log("Malt");
-            //         console.log(beerdata[i].ingredients.malt);
-            //         console.log("Food Pairing");
-            //         console.log(beerdata[i].food_pairing);
+            for (var i = 0; i < 1; i++) {
 
+                console.log(beerdata[i].name);
+                console.log(beerdata[i].image_url);
+                console.log("Hops");
+                console.log(beerdata[i].ingredients.hops);
+                console.log("Malt");
+                console.log(beerdata[i].ingredients.malt);
+                console.log("Food Pairing");
+                console.log(beerdata[i].food_pairing);
+
+                $("#beer-name1").html(beerdata[i].name);
+                $("#beer-desc1").text(beerdata[i].description);
+            }
 
             //         // $('.list-beers').prepend("<li>" + beerdata[i].name + "</li>").on("click", "li", function () {
             //         //     // var city = $(this).text();
@@ -107,8 +116,8 @@ $(document).ready(function () {
             get_punkbeer("bitter", "");
         else if (beer_type.includes("Aroma"))
             get_punkbeer("aroma", "");
-        else if (beer_type.includes("Flavour"))
-            get_punkbeer("flavour", "");
+        else if (beer_type.includes("Randomize"))
+            get_punkbeer("random", "");
     });
 
     // malt list
@@ -132,7 +141,7 @@ $(document).ready(function () {
     //get_punkbeer("Dog", "", "Dark");
     //get_punkbeer("", "", "");
 
-    get_spoonacular("cherry");
+    //get_spoonacular("cherry");
 
 
     //
