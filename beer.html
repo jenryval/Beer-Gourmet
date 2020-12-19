@@ -1,40 +1,110 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beer Gourmet</title>
-    <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-</head>
-<body>
-    <div class="top-bar" style="background-color: rgb(58, 58, 165);">
-        <div class="top-bar-left">
-          <ul class="dropdown menu" data-dropdown-menu>
-            <li class="menu-text">HOME</li>
-            <li>
-              <a href="#">One</a>
-            </li>
-            <li><a href="#">Two</a></li>
-            <li id="BeerGourmet"><a  href="#">Beer Gourmet</a></li>
-          </ul>
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation | Welcome</title>
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <link rel="stylesheet" href="beer.css">
+  </head>
+  <body>
+
+    <!-- Start Top Bar -->
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="menu">
+          <li class="menu-text">Beer Gourmet</li>
+        </ul>
+      </div>
+      <div class="top-bar-right">
+      </div>
+    </div>
+    <!-- End Top Bar -->
+
+    <div class="callout large primary">
+      <div class="row column text-center">
+        <h1>Grab a beer!</h1>
+      </div>
+    </div>
+
+    <div class="row" id="content">
+      <div class="medium-8 columns">
+        <div class="blog-post">
+          <h3>Awesome blog post title <small>3/6/2015</small></h3>
+          <img class="thumbnail" src="https://cdn2.justwineapp.com/assets/article/2019/04/dark-roasty-beers.jpg">
+          <p>Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus.</p>
+          <div class="callout">
+            <ul class="menu simple">
+              <li id="food-pairing"><a href="#">Complimentary Foods!</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="top-bar-right">
-          <ul class="menu">
-            <li><input type="search" placeholder="Search"></li>
-            <li><button type="button" class="button">Search</button></li>
-          </ul>
+
+        <div class="blog-post">
+          <h3>Awesome blog post title <small>3/6/2015</small></h3>
+          <img class="thumbnail" src="https://placehold.it/850x350">
+          <p>Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus.</p>
+          <div class="callout">
+            <ul class="menu simple">
+              <li><a href="#">Author: Mike Mikers</a></li>
+              <li><a href="#">Comments: 3</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="blog-post">
+          <h3>Awesome blog post title <small>3/6/2015</small></h3>
+          <img class="thumbnail" src="https://placehold.it/850x350">
+          <p>Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus.</p>
+          <div class="callout">
+            <ul class="menu simple">
+              <li><a href="#">Author: Mike Mikers</a></li>
+              <li><a href="#">Comments: 3</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="blog-post">
+          <h3>Awesome blog post title <small>3/6/2015</small></h3>
+          <img class="thumbnail" src="https://placehold.it/850x350">
+          <p>Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus.</p>
+          <div class="callout">
+            <ul class="menu simple">
+              <li><a href="#">Author: Mike Mikers</a></li>
+              <li><a href="#">Comments: 3</a></li>
+            </ul>
+          </div>
         </div>
       </div>
+      <div class="medium-3 columns" data-sticky-container>
+        <div class="sticky" data-sticky data-anchor="content">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="#">Dark Beer</a></li>
+            <li><a href="#">Light Beer</a></li>
+            <li><a href="#">Bitter Berr</a></li>
+            <li><a href="#">Sweet Beer</a></li>
+          </ul>
+          <br>
+    <div class="row column">
+      <ul class="pagination" role="navigation" aria-label="Pagination">
+        <li class="disabled">Previous</li>
+        <li class="current"><span class="show-for-sr">You're on page</span> 1</li>
+        <li><a href="#" aria-label="Page 2">2</a></li>
+        <li><a href="#" aria-label="Page 3">3</a></li>
+        <li><a href="#" aria-label="Page 4">4</a></li>
+        <li class="ellipsis"></li>
+        <li><a href="#" aria-label="Page 12">12</a></li>
+        <li><a href="#" aria-label="Page 13">13</a></li>
+        <li><a href="#" aria-label="Next page">Next</a></li>
+      </ul>
+    </div>
 
-      
-          
-  
-        
-
-      <img src="bar.jpg.png" alt="">
-
-   <script src="script.js" type="text/javascript"></script>
-   <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-</body>
+    <script scr="beer.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
 </html>
