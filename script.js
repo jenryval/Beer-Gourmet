@@ -1,7 +1,7 @@
 // JavaScript function that wraps everything and runs when DOM is ready
 // Notes:
 
-
+$(document).foundation();
 $(document).ready(function () {
     //
     // saved api key 
@@ -31,14 +31,16 @@ $(document).ready(function () {
 
 
 
-    function get_punkbeer(by_name, attribute_type, malt_type) {
+    function get_punkbeer(hops_type, malt_type) {
 
         // determine the search query if any
         var query_string = punkbeer_api;
-        if (by_name)
-            query_string = query_string + "&beer_name=" + by_name;
-        if (attribute_type)
-            query_string = query_string + "&hops=" + attribute_type;
+        // if (by_name)
+        //     query_string = query_string + "&beer_name=" + by_name;
+        console.log("hops = " + hops_type);
+        console.log("malt = " + malt_type);
+        if (hops_type)
+            query_string = query_string + "&hops=" + hops_type;
         if (malt_type)
             query_string = query_string + "&malt=" + malt_type;
 
@@ -47,32 +49,33 @@ $(document).ready(function () {
 
         $.ajax({
             url: query_string,
+            //url: punkbeer_api_attribute,
             method: "GET",
-            }).then(function (beerdata) {
+        }).then(function (beerdata) {
             //suceess: function (beerdata) {
 
-                console.log("Punk data:");
-                console.log(beerdata);
+            console.log("Punk data:");
+            console.log(beerdata);
 
-                for (var i = 0; i < beerdata.length; i++) {
-                    console.log(beerdata[i].name);
-                    console.log(beerdata[i].image_url);
-                    console.log("Hops");
-                    console.log(beerdata[i].ingredients.hops);
-                    console.log("Malt");
-                    console.log(beerdata[i].ingredients.malt);
-                    console.log("Food Pairing");
-                    console.log(beerdata[i].food_pairing);
+            //     for (var i = 0; i < beerdata.length; i++) {
+            //         console.log(beerdata[i].name);
+            //         console.log(beerdata[i].image_url);
+            //         console.log("Hops");
+            //         console.log(beerdata[i].ingredients.hops);
+            //         console.log("Malt");
+            //         console.log(beerdata[i].ingredients.malt);
+            //         console.log("Food Pairing");
+            //         console.log(beerdata[i].food_pairing);
 
 
-                    $('.list-beers').prepend("<li>" + beerdata[i].name + "</li>").on("click", "li", function () {
-                        // var city = $(this).text();
-                        //get_beerdata;
-                    });
-                }
-            })
-        }
-    
+            //         // $('.list-beers').prepend("<li>" + beerdata[i].name + "</li>").on("click", "li", function () {
+            //         //     // var city = $(this).text();
+            //         //     //get_beerdata;
+            //         // });
+            //     }
+        })
+    }
+
     function get_spoonacular(menu_item) {
 
         var query_string = spoonacular_api;
@@ -93,8 +96,41 @@ $(document).ready(function () {
         })
     }
 
+    // hops list
+    //
+    $('.beer-list').on("click", "li", function () {
+        console.log("Im here beer list!!!");
+        var beer_type = $(this).text();
 
-    get_punkbeer("Dog", "", "Dark");
+        console.log(beer_type);
+        if (beer_type.includes("ittter"))
+            get_punkbeer("bitter", "");
+        else if (beer_type.includes("Aroma"))
+            get_punkbeer("aroma", "");
+        else if (beer_type.includes("Flavour"))
+            get_punkbeer("flavour", "");
+    });
+
+    // malt list
+    //
+    $('.malt-list').on("click", "li", function () {
+        console.log("Im here malt!!!");
+        var beer_type = $(this).text();
+        console.log(beer_type);
+
+        if (beer_type.includes("Wheaty"))
+            get_punkbeer("", "Wheat");
+        else if (beer_type.includes("Chocolate"))
+            get_punkbeer("", "chocolate");
+        else if (beer_type.includes("Mountains"))
+            get_punkbeer("", "smokey");
+        else if (beer_type.includes("Brown"))
+            get_punkbeer("", "brown");
+    });
+
+
+    //get_punkbeer("Dog", "", "Dark");
+    //get_punkbeer("", "", "");
 
     get_spoonacular("cherry");
 
