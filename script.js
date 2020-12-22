@@ -3,6 +3,16 @@
 
 $(document).foundation();
 $(document).ready(function () {
+    var beer_type;
+    var beer_type_num;
+    //1 = bitter
+    //2 = aroma
+    //3 = wheaty
+    //4 = chocolate
+    //5 = smokey
+    //6 = brown or bear
+    
+    
     //
     // saved api key 
 
@@ -37,6 +47,10 @@ $(document).ready(function () {
 
         var fid;
         var fnum;
+        var random_img_num;
+        var max_food_paring;
+        var max_beer_page;
+
         // determine the search query if any
         var query_string = punkbeer_api;
 
@@ -65,7 +79,14 @@ $(document).ready(function () {
             console.log("Punk data:");
             console.log(beerdata);
 
-            for (var i = 0; i < 2; i++) {
+            // display 4 beers on a page
+            //
+            max_beer_page = 4;
+            if (beerdata.length < 4){
+                max_beer_page = beerdata.length;
+            }
+
+            for (var i = 0; i < max_beer_page; i++) {
 
                 console.log("Beer #" + i + "name=" + beerdata[i].name);
                 console.log(beerdata[i].image_url);
@@ -77,10 +98,30 @@ $(document).ready(function () {
                 console.log(beerdata[i].food_pairing);
                 //console.log(beerdata[i].food_pairing[0]);
 
-                $("#beer-name" + i).html(beerdata[i].name);
-                $("#beer-desc" + i).text(beerdata[i].description);
+                console.log("beer num " + beer_type_num);
 
-                for (var ii = 0; ii < beerdata[i].food_pairing.length; ii++) {
+                // randomize the image selection (api images are disappointing)
+                //
+                min = beer_type_num * 10 + 1;
+                max = min + 2;
+
+                random_img_num = Math.floor(Math.random() * (max - min + 1) ) + min
+
+                console.log("random num image " + random_img_num);
+
+                $("#beer-name" + i).html(beerdata[i].name + " (" + beer_type + ")" );
+                $("#beer-desc" + i).text(beerdata[i].description);
+                $("#beer-img" + i).attr("src","./images/" + random_img_num + "beer.jpg");
+
+                // limit food paring to 3
+                //
+                max_food_paring = beerdata[i].food_pairing.length;
+                if (beerdata[i].food_pairing.length > 3) {
+                    max_food_paring  = 3    
+                }
+
+                $("#food-pairing" + i).empty();
+                for (var ii = 0; ii < max_food_paring; ii++) {
 
                     fnum = i*10+ii;
                     fid = "fid" + fnum;
@@ -93,8 +134,6 @@ $(document).ready(function () {
                     });
                 }
             }
-
-
         })
 
     }
@@ -123,34 +162,50 @@ $(document).ready(function () {
     //
     $('.beer-list').on("click", "li", function () {
         console.log("Im here beer list!!!");
-        var beer_type = $(this).text();
+        beer_type = $(this).text();
 
         console.log(beer_type);
-        if (beer_type.includes("ittter"))
+        if (beer_type.includes("ittter")) {
+            beer_type_num = 1;
             get_punkbeer("bitter", "");
-        else if (beer_type.includes("Aroma"))
-            get_punkbeer("aroma", "");
-        else if (beer_type.includes("Randomize"))
+        }
+        else if (beer_type.includes("Aroma")) {
+            beer_type_num = 2;
+            get_punkbeer("aroma", "");           
+        }
+        else if (beer_type.includes("Randomize")) {
+            beer_type_num = 0;
             get_punkbeer("random", "");
+        }
     });
 
     // malt list
     //
     $('.malt-list').on("click", "li", function () {
         console.log("Im here malt!!!");
-        var beer_type = $(this).text();
+        beer_type = $(this).text();
         console.log(beer_type);
 
-        if (beer_type.includes("Wheaty"))
+        if (beer_type.includes("Wheaty")) {
+            beer_type_num = 3;                
             get_punkbeer("", "Wheat");
-        else if (beer_type.includes("Chocolate"))
+        }
+        else if (beer_type.includes("Chocolate")) {
+            beer_type_num = 4;
             get_punkbeer("", "chocolate");
-        else if (beer_type.includes("Mountains"))
+        }
+        else if (beer_type.includes("Mountains")) {
+            beer_type_num = 5;
             get_punkbeer("", "smokey");
-        else if (beer_type.includes("Brown"))
+        }
+        else if (beer_type.includes("Brown")) {
+            beer_type_num = 6;
             get_punkbeer("", "brown");
+        }
     });
 
+
+    // testing
 
     //get_punkbeer("Dog", "", "Dark");
     //get_punkbeer("", "", "");

@@ -31,3 +31,8 @@
     background-color: darkslateblue;
     color: white;
   }
+
+  img {
+    width:675px;
+    height: 340px;
+  }
