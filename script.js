@@ -20,27 +20,17 @@ $(document).ready(function () {
     //
     // Examples
 
-    var test_punkbeer_api = "https://api.punkapi.com/v2/beers"
-    var punkbeer_api = "https://api.punkapi.com/v2/beers?"
-    var punkbeer_random = "https://api.punkapi.com/v2/beers/random"
+    var test_punkbeer_api = "https://api.punkapi.com/v2/beers";
+    var punkbeer_api = "https://api.punkapi.com/v2/beers?";
+    var punkbeer_random = "https://api.punkapi.com/v2/beers/random";
     var punkbeer_api_beforedate = "https://api.punkapi.com/v2/beers?brewed_before=11-2012&abv_gt=6";
     var punkbeer_api_name = "https://api.punkapi.com/v2/beers?beer_name=punk";
     var punkbeer_api_food = "https://api.punkapi.com/v2/beers?food=chicken";
     var punkbeer_api_attribute = "https://api.punkapi.com/v2/beers?hops=bitter";
 
-    var openbrew_api = "https://api.openbrewerydb.org/breweries";
-    var openbrew_api_name = "https://api.openbrewerydb.org/breweries?by_name=Buzz";
-
-    var brewerydb_key = "fc9c93c3da50a4389512134d4f5b506f"
-    var brewerydb_api = "http://sandbox-api.brewerydb.com/v2/beers/?key=" + brewerydb_key;
-
-    var brewerydb_api = "https://sandbox-api.brewerydb.com/v2/random/?key=5417f05a8a5701a1a63af9a7ff8aec8f";
-
     var spoonacular_key = "873062e3e17f4030a94a2f81ccdb4281";
     //var spoonacular_api = "https://api.spoonacular.com/food/menuItems/search?apiKey=873062e3e17f4030a94a2f81ccdb4281&query=chicken%20wings"
-    var spoonacular_api = "https://api.spoonacular.com/food/menuItems/search?apiKey=873062e3e17f4030a94a2f81ccdb4281"
-
-
+    var spoonacular_api = "https://api.spoonacular.com/food/menuItems/search?apiKey=873062e3e17f4030a94a2f81ccdb4281";
 
 
     function get_punkbeer(hops_type, malt_type) {
@@ -105,7 +95,7 @@ $(document).ready(function () {
                 min = beer_type_num * 10 + 1;
                 max = min + 2;
 
-                random_img_num = Math.floor(Math.random() * (max - min + 1) ) + min
+                random_img_num = Math.floor(Math.random() * (max - min + 1) ) + min;
 
                 console.log("random num image " + random_img_num);
 
@@ -117,7 +107,7 @@ $(document).ready(function () {
                 //
                 max_food_paring = beerdata[i].food_pairing.length;
                 if (beerdata[i].food_pairing.length > 3) {
-                    max_food_paring  = 3    
+                    max_food_paring  = 3;  
                 }
 
                 $("#food-pairing" + i).empty();
@@ -130,11 +120,11 @@ $(document).ready(function () {
                         e.preventDefault();
                         
                         var food_item = $(this).text();
-                        get_spoonacular(food_item)                        
+                        get_spoonacular(food_item);                      
                     });
                 }
             }
-        })
+        });
 
     }
 
@@ -155,7 +145,7 @@ $(document).ready(function () {
                 console.log(fooddata.menuItems[i].restaurantChain);
             }
 
-        })
+        });
     }
 
     // hops list
@@ -165,7 +155,7 @@ $(document).ready(function () {
         beer_type = $(this).text();
 
         console.log(beer_type);
-        if (beer_type.includes("ittter")) {
+        if (beer_type.includes("Bitter")) {
             beer_type_num = 1;
             get_punkbeer("bitter", "");
         }
@@ -230,7 +220,7 @@ $(document).ready(function () {
             //        console.log(beerdata[i].brewery_type)
             //    }
 
-        })
+        });
     }
 
     function get_brewerydb() {
@@ -246,6 +236,6 @@ $(document).ready(function () {
             //        console.log(beerdata[i].brewery_type)
             //    }
 
-        })
+        });
     }
-})
+});
