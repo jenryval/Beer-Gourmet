@@ -3,22 +3,20 @@
 
 $(document).foundation();
 $(document).ready(function () {
+
     var beer_type;
+    //
+    // beer types are assigned a number for images
+
     var beer_type_num;
+
     //1 = bitter
     //2 = aroma
     //3 = wheaty
     //4 = chocolate
     //5 = smokey
     //6 = brown or bear
-    
-    
-    //
-    // saved api key 
 
-    var apikey = "";
-    //
-    // Examples
 
     var test_punkbeer_api = "https://api.punkapi.com/v2/beers"
     var punkbeer_api = "https://api.punkapi.com/v2/beers?"
@@ -40,11 +38,15 @@ $(document).ready(function () {
     //var spoonacular_api = "https://api.spoonacular.com/food/menuItems/search?apiKey=873062e3e17f4030a94a2f81ccdb4281&query=chicken%20wings"
     var spoonacular_api = "https://api.spoonacular.com/food/menuItems/search?apiKey=873062e3e17f4030a94a2f81ccdb4281"
 
-
+    // iniitalize by hiding beers on page
+    //
     $("#beer0").hide();
     $("#beer1").hide();
     $("#beer2").hide();
     $("#beer3").hide();
+
+    //
+    // api call punkapi
 
     function get_punkbeer(hops_type, malt_type) {
 
@@ -54,13 +56,14 @@ $(document).ready(function () {
         var max_food_paring;
         var max_beer_page;
 
-        // determine the search query if any
+        //
+        // determine the search query if any initialzie with base url
+
         var query_string = punkbeer_api;
 
-        // if (by_name)
-        //     query_string = query_string + "&beer_name=" + by_name;
         console.log("hops = " + hops_type);
         console.log("malt = " + malt_type);
+
         if (hops_type)
             if (hops_type === "random")
                 query_string = punkbeer_random;
@@ -79,6 +82,8 @@ $(document).ready(function () {
         }).then(function (beerdata) {
             //suceess: function (beerdata) {
 
+            // clear previous beers listed
+            //
             $("#beer0").hide();
             $("#beer1").hide();
             $("#beer2").hide();
@@ -87,7 +92,7 @@ $(document).ready(function () {
             console.log("Punk data:");
             console.log(beerdata);
 
-            // display 4 beers on a page
+            // display 4 beers on a page max
             //
             max_beer_page = 4;
             if (beerdata.length < 4){
@@ -130,6 +135,7 @@ $(document).ready(function () {
                 }
 
                 $("#food-pairing" + i).empty();
+
                 for (var ii = 0; ii < max_food_paring; ii++) {
 
                     fnum = i*10+ii;
@@ -144,9 +150,10 @@ $(document).ready(function () {
                 }
             }
         })
-
     }
 
+    // api list possible returante for food paring
+    //
     function get_spoonacular(menu_item) {
 
         var query_string = spoonacular_api;
@@ -167,7 +174,7 @@ $(document).ready(function () {
         })
     }
 
-    // hops list
+    // hops list event click
     //
     $('.beer-list').on("click", "li", function () {
         console.log("Im here beer list!!!");
@@ -188,7 +195,7 @@ $(document).ready(function () {
         }
     });
 
-    // malt list
+    // malt list event click
     //
     $('.malt-list').on("click", "li", function () {
         console.log("Im here malt!!!");
