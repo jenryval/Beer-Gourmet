@@ -79,6 +79,11 @@ $(document).ready(function () {
         }).then(function (beerdata) {
             //suceess: function (beerdata) {
 
+            $("#beer0").hide();
+            $("#beer1").hide();
+            $("#beer2").hide();
+            $("#beer3").hide();
+
             console.log("Punk data:");
             console.log(beerdata);
 
