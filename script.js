@@ -41,7 +41,10 @@ $(document).ready(function () {
     var spoonacular_api = "https://api.spoonacular.com/food/menuItems/search?apiKey=873062e3e17f4030a94a2f81ccdb4281"
 
 
-
+    $("#beer0").hide();
+    $("#beer1").hide();
+    $("#beer2").hide();
+    $("#beer3").hide();
 
     function get_punkbeer(hops_type, malt_type) {
 
@@ -109,6 +112,7 @@ $(document).ready(function () {
 
                 console.log("random num image " + random_img_num);
 
+                $("#beer" + i).show();
                 $("#beer-name" + i).html(beerdata[i].name + " (" + beer_type + ")" );
                 $("#beer-desc" + i).text(beerdata[i].description);
                 $("#beer-img" + i).attr("src","./images/" + random_img_num + "beer.jpg");
