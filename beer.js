@@ -23,9 +23,9 @@
 // }
 // // console.log(foods);
 
-// document.addEventListener("click", function(e){
-//     console.log(e.target.id)
-// })
+document.addEventListener("click", function(e){
+    console.log(e.target.id)
+})
 
 
 // $("#food-pairing").click(function(e){

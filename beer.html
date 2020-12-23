@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foundation | Welcome</title>
+    <title>Beer Gourmet</title>
+    <!-- <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
   </head>
   <body>
@@ -28,15 +30,32 @@
     <div class="row" id="content">
       <div class="medium-8 columns">
         <div class="blog-post">
-          <h3 id="beer-name1">Awesome blog post title <small>3/6/2015</small></h3>
+          <h3 id="beer-name0">Awesome blog post title <small>3/6/2015</small></h3>
           <img id="img1" class="thumbnail" src="https://cdn2.justwineapp.com/assets/article/2019/04/dark-roasty-beers.jpg">
           <p>Beer facts</p>
           <div class="callout">
-            <a><button id="food-pairing" class="menu-simple" data-open="exampleModal1">Eat up!</button></a>
-            <div class="reveal" id="exampleModal1" data-reveal>
-              <h1>Awesome. I Have It.</h1>
-              <p class="lead">Your couch. It is mine.</p>
-              <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+            <a><button id="food-pairing0" class="menu-simple" data-open="Modal0">Eat up!</button></a>
+            <div class="reveal" id="Modal0" data-reveal>
+              <h1>Here are some places you can grab these foods!</h1>
+              <p class="lead">look below</p>
+              <p></p>
+              <button class="close-button" data-close aria-label="Close modal" type="button">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog-post">
+          <h3 id="beer-name1">Awesome blog post title <small>3/6/2015</small></h3>
+          <img id="img2" class="thumbnail" src="https://cdn2.justwineapp.com/assets/article/2019/04/dark-roasty-beers.jpg">
+          <p>beer facts.</p>
+          <div class="callout">
+            <a><button id="food-pairing1" class="menu-simple" data-open="Modal1">Eat up!</button></a>
+            <div class="reveal" id="Modal1" data-reveal>
+              <h1>Here are some places you can grab these foods!</h1>
+              <p class="lead">look below</p>
+              <p></p>
               <button class="close-button" data-close aria-label="Close modal" type="button">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -46,42 +65,44 @@
 
         <div class="blog-post">
           <h3 id="beer-name2">Awesome blog post title <small>3/6/2015</small></h3>
-          <img id="img2" class="thumbnail" src="https://cdn2.justwineapp.com/assets/article/2019/04/dark-roasty-beers.jpg">
+          <img id="img3" class="thumbnail" src="https://cdn2.justwineapp.com/assets/article/2019/04/dark-roasty-beers.jpg">
           <p>beer facts.</p>
           <div class="callout">
-            <ul class="menu simple">
-              <li><a href="#">Eat up!</a></li>
-            </ul>
+            <a><button id="food-pairing0" class="menu-simple" data-open="Modal2">Eat up!</button></a>
+            <div class="reveal" id="Modal2" data-reveal>
+              <h1>Here are some places you can grab these foods!</h1>
+              <p class="lead">look below</p>
+              <p></p>
+              <button class="close-button" data-close aria-label="Close modal" type="button">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
           </div>
         </div>
 
         <div class="blog-post">
           <h3 id="beer-name3">Awesome blog post title <small>3/6/2015</small></h3>
-          <img id="img3" class="thumbnail" src="https://cdn2.justwineapp.com/assets/article/2019/04/dark-roasty-beers.jpg">
-          <p>beer facts.</p>
-          <div class="callout">
-            <ul class="menu simple">
-              <li><a href="#">Eat up!</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="blog-post">
-          <h3 id="beer-name4">Awesome blog post title <small>3/6/2015</small></h3>
           <img id="img4" class="thumbnail" src="https://cdn2.justwineapp.com/assets/article/2019/04/dark-roasty-beers.jpg">
           <p>beer facts.</p>
           <div class="callout">
-            <ul class="menu simple">
-              <li><a href="#">Eat up!</a></li>
-            </ul>
+            <a><button id="food-pairing0" class="menu-simple" data-open="Modal2">Eat up!</button></a>
+            <div class="reveal" id="Modal2" data-reveal>
+              <h1>Here are some places you can grab these foods!</h1>
+              <p class="lead">look below</p>
+              <p></p>
+              <button class="close-button" data-close aria-label="Close modal" type="button">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
+
       <div class="medium-3 columns" data-sticky-container>
         <div class="sticky" data-sticky data-anchor="content">
           <h4>Hoppiness!</h4>
-          <ul>
-            <li ><a id="aromaBeer" href="#">Aroma in the air!</a></li>
+          <ul >
+            <li ><a id="aromaBeer">Aroma in the air!</a></li>
             <li ><a id="bitterBeer" href="#">bbbb-bbii-bitter</a></li>
             <li ><a id="randomBeer" href="#">random beer</a></li>
             <br>
@@ -91,114 +112,14 @@
             <li ><a id="smokeyBeer" href="#">smokey</a></li>
             <li ><a id="brownBeer" href="#">brownie</a></li>
           </ul>
-    <div class="row column">
-      <ul class="pagination" role="navigation" aria-label="Pagination">
-        <li class="disabled">Previous</li>
-        <li class="current"><span class="show-for-sr">You're on page</span> 1</li>
-        <li><a href="#" aria-label="Page 2">2</a></li>
-        <li><a href="#" aria-label="Page 3">3</a></li>
-        <li><a href="#" aria-label="Page 4">4</a></li>
-        <li class="ellipsis"></li>
-        <li><a href="#" aria-label="Page 12">12</a></li>
-        <li><a href="#" aria-label="Page 13">13</a></li>
-        <li><a href="#" aria-label="Next page">Next</a></li>
-      </ul>
-    </div>
+
+          
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
     <script src="beer.js"></script>
+    <script src="/your-path-to-fontawesome/js/all.js"></script>
     <script>
       $(document).foundation();
     </script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beer Gourmet</title>
-    <link rel="stylesheet" href="beer.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-</head>
-<body>
-  <div class="top-bar" id="responsive-menu">
-        <div class="top-bar-left">
-            <ul class="title menu">
-                <button id="homeBTN" type="button" class="button">HOME</button>
-                <li id="Beer-gourmet-title">Beer Gourmet</li>
-          </ul>
-        </div>
-        <div class="top-bar-right">
-          <ul class="menu">
-            <li><input class="search-input" type="search" placeholder="Search your beer.."></li>
-            <li><button type="button" class="button">Beer me!</button></li>
-          </ul>
-        </div>
-      </div>
-      <br>
-<div class="card" style="width: 300px;">
-  <div class="card-divider">
-    <h4>Beer Types</h4>
-      </div>
-        <img src="">
-       <div class="card-body" id="searched-beer">
-    </div>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore iusto, fugit eius nulla accusantium repellendus suscipit quasi quidem, facere praesentium libero soluta totam? Eos ut et ea assumenda voluptates beatae?</p>
-  </div>
-</div>
-</div>
-  </div>
-</div>
-
-
-<script src="beer.css" type="text/javascript"></script>
-</body>
-</html> -->
