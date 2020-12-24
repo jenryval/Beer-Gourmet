@@ -20,6 +20,7 @@
       <div class="top-bar-right">
       </div>
     </div>
+
     <!-- End Top Bar -->
     <div class="callout large primary">
       <div class="row column text-center">
@@ -29,27 +30,37 @@
 
     <div class="row" id="content">
       <div class="medium-8 columns">
+
         <div id="beer0" class="blog-post">
-          <h3 id="beer-name0">Awesome blog post title <small>3/6/2015</small></h3>
+          <h3 id="beer-name0">Awesome blog post title</h3>
           <img id="beer-img0" class="thumbnail" src="https://cdn2.justwineapp.com/assets/article/2019/04/dark-roasty-beers.jpg">
           <p id="beer-desc0">Beer facts</p>
+
           <div class="callout">
-            <a><button id="food-pairing0" class="menu-simple" data-open="Modal0">Eat up!</button></a>
+            <!-- I replace button with ul -->
+
+            <!-- <a><button id="food-pairing0" class="menu-simple" data-open="Modal0">Eat up!</button></a> -->
+            <ul id="food-pairing0" style="list-style-type: none;"  data-open="Modal0"></ul>
+
+            <!-- Added resturant id -->
             <div class="reveal" id="Modal0" data-reveal>
-              <h1>Here are some places you can grab these foods!</h1>
-              <p class="lead">look below</p>
-              <p></p>
+              <h4>Restaurant Suggestions</h4>
+              <p id="restaurant0" class="lead"></p>
+
               <button class="close-button" data-close aria-label="Close modal" type="button">
                 <span aria-hidden="true">&times;</span>
               </button>
+
             </div>
+
           </div>
         </div>
 
         <div id="beer1" class="blog-post">
-          <h3 id="beer-name1">Awesome blog post title <small>3/6/2015</small></h3>
+          <h3 id="beer-name1">Awesome blog post title</h3>
           <img id="beer-img1" class="thumbnail" src="https://cdn2.justwineapp.com/assets/article/2019/04/dark-roasty-beers.jpg">
-          <p id="beer-desc1">beer facts.</p>
+          <p id="beer-desc1">beer facts</p>
+          
           <div class="callout">
             <a><button id="food-pairing1" class="menu-simple" data-open="Modal1">Eat up!</button></a>
             <div class="reveal" id="Modal1" data-reveal>
@@ -64,9 +75,10 @@
         </div>
 
         <div id="beer2" class="blog-post">
-          <h3 id="beer-name2">Awesome blog post title <small>3/6/2015</small></h3>
+          <h3 id="beer-name2">Awesome blog post title</h3>
           <img id="beer-img2" class="thumbnail" src="https://cdn2.justwineapp.com/assets/article/2019/04/dark-roasty-beers.jpg">
           <p id="beer-desc2">beer facts.</p>
+          
           <div class="callout">
             <a><button id="food-pairing2" class="menu-simple" data-open="Modal2">Eat up!</button></a>
             <div class="reveal" id="Modal2" data-reveal>
@@ -78,12 +90,14 @@
               </button>
             </div>
           </div>
+
         </div>
 
         <div id="beer3" class="blog-post">
-          <h3 id="beer-name3">Awesome blog post title <small>3/6/2015</small></h3>
+          <h3 id="beer-name3">Awesome blog post title</h3>
           <img id="beer-img3" class="thumbnail" src="https://cdn2.justwineapp.com/assets/article/2019/04/dark-roasty-beers.jpg">
           <p id="beer-desc3">beer facts.</p>
+
           <div class="callout">
             <a><button id="food-pairing3" class="menu-simple" data-open="Modal2">Eat up!</button></a>
             <div class="reveal" id="Modal2" data-reveal>
@@ -96,6 +110,7 @@
             </div>
           </div>
         </div>
+        
       </div>
 
       <div class="medium-3 columns" data-sticky-container>

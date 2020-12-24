@@ -160,6 +160,8 @@ $(document).ready(function () {
         query_string = query_string + "&query=" + menu_item;
         console.log(query_string);
 
+        $("#resturant0").text("Sayat Nova");
+        
         $.ajax({
             url: query_string,
             method: "GET"
@@ -169,6 +171,8 @@ $(document).ready(function () {
 
             for (var i = 0; i < fooddata.menuItems.length; i++) {
                 console.log(fooddata.menuItems[i].restaurantChain);
+
+                $("#restaurant0").text(fooddata.menuItems[0].restaurantChain);
             }
 
         })
