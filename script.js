@@ -36,7 +36,8 @@ $(document).ready(function () {
 
     var spoonacular_key = "873062e3e17f4030a94a2f81ccdb4281";
     //var spoonacular_api = "https://api.spoonacular.com/food/menuItems/search?apiKey=873062e3e17f4030a94a2f81ccdb4281&query=chicken%20wings"
-    var spoonacular_api = "https://api.spoonacular.com/food/menuItems/search?apiKey=873062e3e17f4030a94a2f81ccdb4281"
+    var spoonacular_api = "https://api.spoonacular.com/food/menuItems/search?apiKey=0eebf06b3ea84f23a5db250879af45af";
+    //apiKey=873062e3e17f4030a94a2f81ccdb4281"
 
     // iniitalize by hiding beers on page
     //
@@ -141,11 +142,11 @@ $(document).ready(function () {
                     fnum = i*10+ii;
                     fid = "fid" + fnum;
 
-                    $("#food-pairing" + i).append("<li id=" + fid + "><a href='#'>" + beerdata[i].food_pairing[ii] + "</a></li>").on("click", "li", function (e) {                        
+                    $("#food-pairing" + i).append("<li id=" + fid + "><a>" + beerdata[i].food_pairing[ii] + "</a></li>").on("click", "#" + fid, function (e) {                        
                         e.preventDefault();
                         
                         var food_item = $(this).text();
-                        get_spoonacular(food_item)                        
+                        get_spoonacular(food_item);                    
                     });
                 }
             }
@@ -156,11 +157,13 @@ $(document).ready(function () {
     //
     function get_spoonacular(menu_item) {
 
+        var max_restaurant;
         var query_string = spoonacular_api;
         query_string = query_string + "&query=" + menu_item;
         console.log(query_string);
+   
 
-        $("#resturant0").text("Sayat Nova");
+        //$("#resturant0").text("Sayat Nova");
         
         $.ajax({
             url: query_string,
@@ -169,12 +172,19 @@ $(document).ready(function () {
 
             console.log(fooddata);
 
-            for (var i = 0; i < fooddata.menuItems.length; i++) {
+            max_restaurant = fooddata.menuItems.length;
+            if (fooddata.menuItems.length > 3) {
+                max_restaurant  = 3    
+            }
+            console.log(max_restaurant);
+
+            for (var i = 0; i < max_restaurant; i++) {
                 console.log(fooddata.menuItems[i].restaurantChain);
 
-                $("#restaurant0").text(fooddata.menuItems[0].restaurantChain);
-            }
+                //$("#restaurant0").text(fooddata.menuItems[i].restaurantChain);
+                $("#restaurant0").append("<li class='fa fa-cutlery'>" + "  " + fooddata.menuItems[i].restaurantChain + "  </li>");
 
+            }            
         })
     }
 
