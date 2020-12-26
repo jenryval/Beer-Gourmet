@@ -146,24 +146,29 @@ $(document).ready(function () {
                         e.preventDefault();
                         
                         var food_item = $(this).text();
-                        get_spoonacular(food_item);                    
+                        get_spoonacular(food_item, $(e.target).parent().parent().attr("id"));                    
                     });
                 }
             }
         })
     }
 
-    // api list possible returante for food paring
+    // api list possible restaurante for food paring
     //
-    function get_spoonacular(menu_item) {
+    function get_spoonacular(menu_item, beer_obj) {
 
         var max_restaurant;
         var query_string = spoonacular_api;
         query_string = query_string + "&query=" + menu_item;
         console.log(query_string);
-   
+        console.log(beer_obj);
+
+        var r = new RegExp("\d+");
+        var beer_num = beer_obj.match(/\d+/g).map(Number);
 
         //$("#resturant0").text("Sayat Nova");
+
+        $("#restaurant" + beer_num).empty();
         
         $.ajax({
             url: query_string,
@@ -182,7 +187,7 @@ $(document).ready(function () {
                 console.log(fooddata.menuItems[i].restaurantChain);
 
                 //$("#restaurant0").text(fooddata.menuItems[i].restaurantChain);
-                $("#restaurant0").append("<li class='fa fa-cutlery'>" + "  " + fooddata.menuItems[i].restaurantChain + "  </li>");
+                $("#restaurant" + beer_num).append("<li class='fa fa-cutlery'>" + "  " + fooddata.menuItems[i].restaurantChain + "  </li>");
 
             }            
         })
@@ -234,6 +239,9 @@ $(document).ready(function () {
         }
     });
 
+    // $(".close-button").on("click", function() {
+    //     $(".reveal-overlay").css("display", "none");
+    // })
 
     // testing
 
