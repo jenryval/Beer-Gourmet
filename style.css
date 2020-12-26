@@ -1,39 +1,4 @@
-
-.work-feature-block {
-    padding: 10px 0;
-    border-top: 1px solid #cacaca;
-    border-bottom: 1px solid #cacaca;
-  }
-  
-  .work-feature-block-image {
-    display: block;
-    margin: auto;
-    padding: 10px 0;
-  }
-
-  .list-beers {
-    list-style-type: none;
-  }  
-  
-  li {
-    height: 30px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding: 5px;
-    background-color: white;
-    text-align: left;
-    color: black;
-    font-size: 1.2em;
-    line-height: 1.0;
-  } 
-
-  li:hover {
-    background-color: darkslateblue;
-    color: white;
-  }
-
-  img {
-    width:675px;
-    height: 340px;
-    opacity: 0.9;
-  }
+.callout{
+    justify-content: center;
+   align-items: center;
+}
