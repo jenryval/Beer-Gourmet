@@ -49,9 +49,6 @@ $(document).ready(function () {
 
         var query_string = punkbeer_api;
 
-        //console.log("hops = " + hops_type);
-        ///console.log("malt = " + malt_type);
-
         if (hops_type)
             if (hops_type === "random")
                 query_string = punkbeer_random;
@@ -126,9 +123,6 @@ $(document).ready(function () {
         var max_restaurant;
         var query_string = spoonacular_api;
         query_string = query_string + "&query=" + menu_item;
-        
-        //console.log(query_string);
-        //console.log(beer_obj);
 
         var r = new RegExp("\d+");
         var beer_num = beer_obj.match(/\d+/g).map(Number);
@@ -140,16 +134,12 @@ $(document).ready(function () {
             method: "GET"
         }).then(function (fooddata) {
 
-            //console.log(fooddata);
-
             max_restaurant = fooddata.menuItems.length;
             if (fooddata.menuItems.length > 3) {
                 max_restaurant  = 3    
             }
-            //console.log(max_restaurant);
 
             for (var i = 0; i < max_restaurant; i++) {
-                //console.log(fooddata.menuItems[i].restaurantChain);
 
                 $("#restaurant" + beer_num).append("<li class='fa fa-cutlery'>" + "  " + fooddata.menuItems[i].restaurantChain + "  </li>");
 
