@@ -18,21 +18,8 @@ $(document).ready(function () {
     //6 = brown or bear
 
 
-    var test_punkbeer_api = "https://api.punkapi.com/v2/beers"
     var punkbeer_api = "https://api.punkapi.com/v2/beers?"
     var punkbeer_random = "https://api.punkapi.com/v2/beers/random"
-    var punkbeer_api_beforedate = "https://api.punkapi.com/v2/beers?brewed_before=11-2012&abv_gt=6";
-    var punkbeer_api_name = "https://api.punkapi.com/v2/beers?beer_name=punk";
-    var punkbeer_api_food = "https://api.punkapi.com/v2/beers?food=chicken";
-    var punkbeer_api_attribute = "https://api.punkapi.com/v2/beers?hops=bitter";
-
-    var openbrew_api = "https://api.openbrewerydb.org/breweries";
-    var openbrew_api_name = "https://api.openbrewerydb.org/breweries?by_name=Buzz";
-
-    var brewerydb_key = "fc9c93c3da50a4389512134d4f5b506f"
-    var brewerydb_api = "http://sandbox-api.brewerydb.com/v2/beers/?key=" + brewerydb_key;
-
-    var brewerydb_api = "https://sandbox-api.brewerydb.com/v2/random/?key=5417f05a8a5701a1a63af9a7ff8aec8f";
 
     var spoonacular_key = "873062e3e17f4030a94a2f81ccdb4281";
     //var spoonacular_api = "https://api.spoonacular.com/food/menuItems/search?apiKey=873062e3e17f4030a94a2f81ccdb4281&query=chicken%20wings"
@@ -62,8 +49,8 @@ $(document).ready(function () {
 
         var query_string = punkbeer_api;
 
-        console.log("hops = " + hops_type);
-        console.log("malt = " + malt_type);
+        //console.log("hops = " + hops_type);
+        ///console.log("malt = " + malt_type);
 
         if (hops_type)
             if (hops_type === "random")
@@ -73,15 +60,10 @@ $(document).ready(function () {
         if (malt_type)
             query_string = query_string + "malt=" + malt_type;
 
-
-        console.log(query_string);
-
         $.ajax({
             url: query_string,
-            //url: test_punkbeer_api,
             method: "GET",
         }).then(function (beerdata) {
-            //suceess: function (beerdata) {
 
             // clear previous beers listed
             //
@@ -89,9 +71,6 @@ $(document).ready(function () {
             $("#beer1").hide();
             $("#beer2").hide();
             $("#beer3").hide();
-
-            console.log("Punk data:");
-            console.log(beerdata);
 
             // display 4 beers on a page max
             //
@@ -101,32 +80,19 @@ $(document).ready(function () {
             }
 
             for (var i = 0; i < max_beer_page; i++) {
-
-                console.log("Beer #" + i + "name=" + beerdata[i].name);
-                console.log(beerdata[i].image_url);
-                console.log("Hops");
-                console.log(beerdata[i].ingredients.hops);
-                console.log("Malt");
-                console.log(beerdata[i].ingredients.malt);
-                console.log("Food Pairing");
-                console.log(beerdata[i].food_pairing);
-                //console.log(beerdata[i].food_pairing[0]);
-
-                console.log("beer num " + beer_type_num);
-
+            
                 // randomize the image selection (api images are disappointing)
                 //
                 min = beer_type_num * 10 + 1;
                 max = min + 2;
 
-                random_img_num = Math.floor(Math.random() * (max - min + 1) ) + min
-
-                console.log("random num image " + random_img_num);
+                random_img_num = Math.floor(Math.random() * (max - min + 1) ) + min;
 
                 $("#beer" + i).show();
                 $("#beer-name" + i).html(beerdata[i].name + " (" + beer_type + ")" );
                 $("#beer-desc" + i).text(beerdata[i].description);
                 $("#beer-img" + i).attr("src","./images/" + random_img_num + "beer.jpg");
+                $("#beer-img" + i).attr("style","max-width: 600px; max-height: 640px;");
 
                 // limit food paring to 3
                 //
@@ -161,13 +127,11 @@ $(document).ready(function () {
         var query_string = spoonacular_api;
         query_string = query_string + "&query=" + menu_item;
         
-        console.log(query_string);
-        console.log(beer_obj);
+        //console.log(query_string);
+        //console.log(beer_obj);
 
         var r = new RegExp("\d+");
         var beer_num = beer_obj.match(/\d+/g).map(Number);
-
-        //$("#resturant0").text("Sayat Nova");
 
         $("#restaurant" + beer_num).empty();
         
@@ -176,18 +140,17 @@ $(document).ready(function () {
             method: "GET"
         }).then(function (fooddata) {
 
-            console.log(fooddata);
+            //console.log(fooddata);
 
             max_restaurant = fooddata.menuItems.length;
             if (fooddata.menuItems.length > 3) {
                 max_restaurant  = 3    
             }
-            console.log(max_restaurant);
+            //console.log(max_restaurant);
 
             for (var i = 0; i < max_restaurant; i++) {
-                console.log(fooddata.menuItems[i].restaurantChain);
+                //console.log(fooddata.menuItems[i].restaurantChain);
 
-                //$("#restaurant0").text(fooddata.menuItems[i].restaurantChain);
                 $("#restaurant" + beer_num).append("<li class='fa fa-cutlery'>" + "  " + fooddata.menuItems[i].restaurantChain + "  </li>");
 
             }            
@@ -197,10 +160,9 @@ $(document).ready(function () {
     // hops list event click
     //
     $('.beer-list').on("click", "li", function () {
-        console.log("Im here beer list!!!");
+
         beer_type = $(this).text();
 
-        console.log(beer_type);
         if (beer_type.includes("ittter")) {
             beer_type_num = 1;
             get_punkbeer("bitter", "");
@@ -218,9 +180,8 @@ $(document).ready(function () {
     // malt list event click
     //
     $('.malt-list').on("click", "li", function () {
-        console.log("Im here malt!!!");
+
         beer_type = $(this).text();
-        console.log(beer_type);
 
         if (beer_type.includes("Wheaty")) {
             beer_type_num = 3;                
@@ -243,54 +204,6 @@ $(document).ready(function () {
     $(".close-button").click(function(){
         $(".reveal-overlay").hide()
     })
-    
-    // $(".close-button").on("click", function() {
-    //     $(".reveal-overlay").css("display", "none");
-    // })
-
-
-    // testing
-
-    //get_punkbeer("Dog", "", "Dark");
-    //get_punkbeer("", "", "");
-
-    //get_spoonacular("ramen");
-
-
-    // ---------------------------------------
-    // Not being used - keeping for reference
-
-    function get_openbrew() {
-
-        $.ajax({
-            url: openbrew_api_name,
-            method: "GET"
-        }).then(function (beerdata) {
-
-            console.log("Brewery location:");
-            console.log(beerdata);
-
-            //    for (var i=0; i<10; i++) {
-            //        console.log(beerdata[i].brewery_type)
-            //    }
-
-        })
-    }
-
-    function get_brewerydb() {
-
-        $.ajax({
-            url: brewerydb_api,
-            method: "GET"
-        }).then(function (beerdata) {
-
-            console.log(beerdata);
-
-            //    for (var i=0; i<10; i++) {
-            //        console.log(beerdata[i].brewery_type)
-            //    }
-
-        })
-    }
+   
 })
 
