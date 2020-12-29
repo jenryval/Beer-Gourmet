@@ -160,6 +160,7 @@ $(document).ready(function () {
         var max_restaurant;
         var query_string = spoonacular_api;
         query_string = query_string + "&query=" + menu_item;
+        
         console.log(query_string);
         console.log(beer_obj);
 
@@ -239,9 +240,14 @@ $(document).ready(function () {
         }
     });
 
+    $(".close-button").click(function(){
+        $(".reveal-overlay").hide()
+    })
+    
     // $(".close-button").on("click", function() {
     //     $(".reveal-overlay").css("display", "none");
     // })
+
 
     // testing
 
