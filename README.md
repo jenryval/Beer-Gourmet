@@ -3,7 +3,7 @@
 
 ## Beer-Gourmet
 
-![](.\images\eximage.jpg)
+![](\images\eximage.jpg)
 ```
 Thirsty and hungry?  Look no further than this site to select any beer with a side!  Search for your favorite beers from a selection of malts, hops or flavors.  Hungry, no problem.  A food-side is provided including the resturant venue.  
 ```
