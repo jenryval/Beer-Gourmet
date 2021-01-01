@@ -4,6 +4,10 @@
 $(document).foundation();
 $(document).ready(function () {
 
+    $(".close-button").click(function(){
+        $(".reveal-overlay").hide()
+    })
+
     var beer_type;
     //
     // beer types are assigned a number for images
@@ -266,3 +270,5 @@ $(document).ready(function () {
     }
 })
 
+
+    

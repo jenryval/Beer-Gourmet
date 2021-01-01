@@ -2,3 +2,13 @@
     justify-content: center;
    align-items: center;
 }
+
+.malt-list, .beer-list{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.fa-beer{
+    margin: 4px;
+}
