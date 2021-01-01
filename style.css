@@ -10,9 +10,14 @@ li {
   margin-top: 35px;
 }
 
+
 body {
-  background-image: url ("bar.jpeg");
-  
+  min-height: 100%;
+  background-image: url("bar.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
 }
 
 .top-bar ul {
@@ -24,6 +29,7 @@ body {
 .menu-text {
   color: black;
   font-weight: 700;
+  text-align: center;
 }
 
 .sticky {
@@ -81,3 +87,4 @@ h2 {
 .food-pairing > ul > li > a {
   color: black;
 }
+
