@@ -10,7 +10,7 @@ Thirsty?  Look no further than this site to select any beer with a side!  Search
 
 ## Some Requirements Before you Drink
 
-The Beer-Gourmet utilize 2 APIs to provide beer selections and resturant venues.  [Punk API](https://api.punkapi.com/) provides a list of beer groupings and [Spponacular](https://api.spoonacular.com/) allows us to search for almost any food sides.
+The Beer-Gourmet utilize 2 APIs to provide beer selections and resturant venues.  [Punk API](https://api.punkapi.com/) provides a list of beer groupings and [Spoonacular](https://api.spoonacular.com/) allows us to search for almost any food sides.  There is a limit of a 150 requests per day.
 
 The application framework for this site is by [Foundation](https://get.foundation/index.html)
 
