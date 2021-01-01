@@ -9,3 +9,75 @@ li {
 #content {
   margin-top: 35px;
 }
+
+body {
+  background-image: url ("bar.jpeg");
+  
+}
+
+.top-bar ul {
+  background-color:#7E5158; 
+  opacity: 0.7;
+  height: 60px;
+}
+
+.sticky {
+  background-color:#7E5158; 
+  opacity: 0.7;
+}
+
+.beer-list > li > a{
+  color: white;
+  font-weight: 700;
+  font-size: larger;
+}
+
+.malt-list > li > a{
+  color: white;
+  font-weight: 700;
+  font-size: larger;
+}
+
+h2 {
+  background-color:#7E5158;
+  color: black;
+}
+
+.beer-name {
+  background-color:#D58A37; 
+  opacity: 0.9;
+  color: white;
+  font-weight: 700;
+  max-width: 550px;
+  text-align: center;
+  margin-top: 100px;
+  border-radius: 75px;
+}
+
+.beer-desc {
+  background-color:#7E5158; 
+  opacity: 0.9;
+  color: black;
+  font-weight: 700;
+  font-style: italic;
+  padding: 5px 5px 5px 5px;
+  width: 75%;
+}
+
+/* #food-pairing0, .callout {
+  background-color:#7E5158; 
+  opacity: 0.7;
+} */
+
+.food-pairing {
+  background-color:#7E5158; 
+  opacity: 0.9;
+  color: black;
+  font-weight: 700;
+  padding: 5px 5px 5px 5px;
+  width: 75%;
+}
+
+.food-pairing > ul > li > a {
+  color: black;
+}

@@ -89,7 +89,7 @@ $(document).ready(function () {
                 $("#beer-name" + i).html(beerdata[i].name + " (" + beer_type + ")" );
                 $("#beer-desc" + i).text(beerdata[i].description);
                 $("#beer-img" + i).attr("src","./images/" + random_img_num + "beer.jpg");
-                $("#beer-img" + i).attr("style","max-width: 600px; max-height: 640px;");
+                $("#beer-img" + i).attr("style","border: 2px solid #643001; max-width: 550px; max-height: 640px;");
 
                 // limit food paring to 3
                 //
