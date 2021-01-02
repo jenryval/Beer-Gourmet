@@ -26,11 +26,11 @@ $(document).ready(function () {
     // var spoonacular_key = "873062e3e17f4030a94a2f81ccdb4281";
     //var spoonacular_api = "https://api.spoonacular.com/food/menuItems/search?apiKey=873062e3e17f4030a94a2f81ccdb4281&query=chicken%20wings"
 
-    var spoonacular_api = "https://api.spoonacular.com/food/menuItems/search?apiKey=e5026b852b45431fa8cd0c9b4ece21ba";
+    var spoonacular_api = "https://api.spoonacular.com/food/menuItems/search?apiKey=3e2a051086ed46759e25a44e4f9f6853";
     //apiKey=0eebf06b3ea84f23a5db250879af45af"
     //apiKey=e5026b852b45431fa8cd0c9b4ece21ba"
 
-    var newli;
+    // var newli;
 
     //
     //define the li event as a variable
@@ -129,15 +129,15 @@ $(document).ready(function () {
                     // });
                     $("#food-pairing" + i).append("<li id=" + fid + "><a>" + beerdata[i].food_pairing[ii] + "</a></li>");
                     //.on("click", "#" + fid, liHandle);
-                    newli =  $("#food-pairing" + i);
+                    // newli =  $("#food-pairing" + i);
                     //$("#food-pairing" + i).on("click", "#" + fid, liHandle);
-                    newli.on("click", "#" + fid, liHandle);
+                    // newli.on("click", "#" + fid, liHandle);
                     
                 }
             }
         })
     }
-    
+
     // api list possible restaurante for food paring
     //
     function get_spoonacular(menu_item, beer_obj) {
@@ -216,6 +216,8 @@ $(document).ready(function () {
     $(".close-button").click(function(){
         $(".reveal-overlay").hide()
     })
+
+    $(document).on("click", ".callout li", liHandle);
    
 })
 
