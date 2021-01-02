@@ -26,9 +26,9 @@ $(document).ready(function () {
     // var spoonacular_key = "873062e3e17f4030a94a2f81ccdb4281";
     //var spoonacular_api = "https://api.spoonacular.com/food/menuItems/search?apiKey=873062e3e17f4030a94a2f81ccdb4281&query=chicken%20wings"
 
-    var spoonacular_api = "https://api.spoonacular.com/food/menuItems/search?apiKey=873062e3e17f4030a94a2f81ccdb4281";
+    var spoonacular_api = "https://api.spoonacular.com/food/menuItems/search?apiKey=e5026b852b45431fa8cd0c9b4ece21ba";
     //apiKey=0eebf06b3ea84f23a5db250879af45af"
-    //apiKey=873062e3e17f4030a94a2f81ccdb4281"
+    //apiKey=e5026b852b45431fa8cd0c9b4ece21ba"
 
     var newli;
 
@@ -124,16 +124,20 @@ $(document).ready(function () {
                     // $("#food-pairing" + i).append("<li id=" + fid + "><a>" + beerdata[i].food_pairing[ii] + "</a></li>").on("click", "#" + fid, function (e) {                        
                     //     e.preventDefault();
                         
-                        var food_item = $(this).text();
-                        get_spoonacular(food_item, $(e.target).parent().parent().attr("id")); 
-                        console.log(this)                   
-                    });
-                    // $("#food-pairing" + i).append("<li id=" + fid + "><a>" + beerdata[i].food_pairing[ii] + "</a></li>").on("click", "#" + fid, liHandle);
+                    //     var food_item = $(this).text();
+                    //     get_spoonacular(food_item, $(e.target).parent().parent().attr("id"));                    
+                    // });
+                    $("#food-pairing" + i).append("<li id=" + fid + "><a>" + beerdata[i].food_pairing[ii] + "</a></li>");
+                    //.on("click", "#" + fid, liHandle);
+                    newli =  $("#food-pairing" + i);
+                    //$("#food-pairing" + i).on("click", "#" + fid, liHandle);
+                    newli.on("click", "#" + fid, liHandle);
+                    
                 }
             }
         })
     }
-
+    
     // api list possible restaurante for food paring
     //
     function get_spoonacular(menu_item, beer_obj) {
