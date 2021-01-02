@@ -26,7 +26,7 @@ $(document).ready(function () {
     // var spoonacular_key = "873062e3e17f4030a94a2f81ccdb4281";
     //var spoonacular_api = "https://api.spoonacular.com/food/menuItems/search?apiKey=873062e3e17f4030a94a2f81ccdb4281&query=chicken%20wings"
 
-    var spoonacular_api = "https://api.spoonacular.com/food/menuItems/search?apiKey=873062e3e17f4030a94a2f81ccdb4281";
+    var spoonacular_api = "https://api.spoonacular.com/food/menuItems/search?apiKey=e5026b852b45431fa8cd0c9b4ece21ba";
     //apiKey=0eebf06b3ea84f23a5db250879af45af"
     //apiKey=873062e3e17f4030a94a2f81ccdb4281"
 
@@ -137,7 +137,7 @@ $(document).ready(function () {
             }
         })
     }
-    
+
     // api list possible restaurante for food paring
     //
     function get_spoonacular(menu_item, beer_obj) {
