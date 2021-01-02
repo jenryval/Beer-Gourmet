@@ -24,6 +24,7 @@ body {
   background-color:#7E5158; 
   font-weight: bolder;
   height: 40px;
+
 }
 
 .menu-text {
@@ -37,7 +38,8 @@ body {
 .sticky {
   background-color:#7E5158; 
   opacity: 0.7;
-  padding: 10px 10px 10px 10px;  
+  padding: 10px 10px 10px 10px; 
+   
 }
 
 .beer-list > li > a{
@@ -102,4 +104,9 @@ h2 {
 .fa{
   margin: 4px;
   /* color:#D58A37; */
+}
+
+
+.sticky.is-anchored{
+  position: relative;
 }
