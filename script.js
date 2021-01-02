@@ -27,17 +27,24 @@ $(document).ready(function () {
     //var spoonacular_api = "https://api.spoonacular.com/food/menuItems/search?apiKey=873062e3e17f4030a94a2f81ccdb4281&query=chicken%20wings"
 
     var spoonacular_api = "https://api.spoonacular.com/food/menuItems/search?apiKey=873062e3e17f4030a94a2f81ccdb4281";
+<<<<<<< HEAD
     // apiKey= "0eebf06b3ea84f23a5db250879af45af"
+=======
+    //apiKey=0eebf06b3ea84f23a5db250879af45af"
+    //apiKey=873062e3e17f4030a94a2f81ccdb4281"
+>>>>>>> ac06dbb4d5f053a64ea9ec688869f12813c558e4
+
+    var newli;
 
     //
     //define the li event as a variable
     
-    // var liHandle = function(e){
-    //     e.preventDefault();
+    var liHandle = function(e){
+        e.preventDefault();
                         
-    //     var food_item = $(this).text();
-    //     get_spoonacular(food_item, $(e.target).parent().parent().attr("id"));
-    // }
+        var food_item = $(this).text();
+        get_spoonacular(food_item, $(e.target).parent().parent().attr("id"));
+    }
 
     // iniitalize by hiding beers on page
     //
@@ -118,14 +125,26 @@ $(document).ready(function () {
                     fnum = i*10+ii;
                     fid = "fid" + fnum;                    
 
-                    $("#food-pairing" + i).append("<li id=" + fid + "><a>" + beerdata[i].food_pairing[ii] + "</a></li>").on("click", "#" + fid, function (e) {                        
-                        e.preventDefault();
+                    // $("#food-pairing" + i).append("<li id=" + fid + "><a>" + beerdata[i].food_pairing[ii] + "</a></li>").on("click", "#" + fid, function (e) {                        
+                    //     e.preventDefault();
                         
+<<<<<<< HEAD
                         var food_item = $(this).text();
                         get_spoonacular(food_item, $(e.target).parent().parent().attr("id")); 
                         console.log(this)                   
                     });
                     // $("#food-pairing" + i).append("<li id=" + fid + "><a>" + beerdata[i].food_pairing[ii] + "</a></li>").on("click", "#" + fid, liHandle);
+=======
+                    //     var food_item = $(this).text();
+                    //     get_spoonacular(food_item, $(e.target).parent().parent().attr("id"));                    
+                    // });
+                    $("#food-pairing" + i).append("<li id=" + fid + "><a>" + beerdata[i].food_pairing[ii] + "</a></li>");
+                    //.on("click", "#" + fid, liHandle);
+                    newli =  $("#food-pairing" + i);
+                    //$("#food-pairing" + i).on("click", "#" + fid, liHandle);
+                    newli.on("click", "#" + fid, liHandle);
+                    
+>>>>>>> ac06dbb4d5f053a64ea9ec688869f12813c558e4
                 }
             }
         })
