@@ -17,7 +17,7 @@ body {
 
 .top-bar ul {
   background-color:#7E5158; 
-  opacity: 0.7;
+  font-weight: bolder;
   height: 40px;
 }
 
@@ -33,15 +33,17 @@ body {
 }
 
 .beer-list > li > a{
-  color: white;
-  font-weight: 700;
-  font-size: larger;
+  color:white;
+  font-weight: 600;
+  font-size: large;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .malt-list > li > a{
   color: white;
-  font-weight: 700;
-  font-size: larger;
+  font-weight: 600;
+  font-size: large;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 h2 {
@@ -80,4 +82,15 @@ h2 {
 
 .food-pairing > ul > li > a {
   color: black;
+}
+
+.beer-list, .malt-list{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.fa{
+  margin: 4px;
+  /* color:#D58A37; */
 }

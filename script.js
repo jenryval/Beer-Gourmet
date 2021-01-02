@@ -21,10 +21,23 @@ $(document).ready(function () {
     var punkbeer_api = "https://api.punkapi.com/v2/beers?"
     var punkbeer_random = "https://api.punkapi.com/v2/beers/random"
 
+    // have a couple api keys in case we hit our limit of 150 calls
+    //
     var spoonacular_key = "873062e3e17f4030a94a2f81ccdb4281";
     //var spoonacular_api = "https://api.spoonacular.com/food/menuItems/search?apiKey=873062e3e17f4030a94a2f81ccdb4281&query=chicken%20wings"
+
     var spoonacular_api = "https://api.spoonacular.com/food/menuItems/search?apiKey=0eebf06b3ea84f23a5db250879af45af";
     //apiKey=873062e3e17f4030a94a2f81ccdb4281"
+
+    //
+    //define the li event as a variable
+    
+    // var liHandle = function(e){
+    //     e.preventDefault();
+                        
+    //     var food_item = $(this).text();
+    //     get_spoonacular(food_item, $(e.target).parent().parent().attr("id"));
+    // }
 
     // iniitalize by hiding beers on page
     //
@@ -89,7 +102,7 @@ $(document).ready(function () {
                 $("#beer-name" + i).html(beerdata[i].name + " (" + beer_type + ")" );
                 $("#beer-desc" + i).text(beerdata[i].description);
                 $("#beer-img" + i).attr("src","./images/" + random_img_num + "beer.jpg");
-                $("#beer-img" + i).attr("style","border: 2px solid #643001; max-width: 550px; max-height: 640px;");
+                $("#beer-img" + i).attr("style","border: 2px solid #643001; max-width: 550px; max-height: 400px;");
 
                 // limit food paring to 3
                 //
@@ -97,13 +110,13 @@ $(document).ready(function () {
                 if (beerdata[i].food_pairing.length > 3) {
                     max_food_paring  = 3    
                 }
-
+                              
                 $("#food-pairing" + i).empty();
 
                 for (var ii = 0; ii < max_food_paring; ii++) {
 
                     fnum = i*10+ii;
-                    fid = "fid" + fnum;
+                    fid = "fid" + fnum;                    
 
                     $("#food-pairing" + i).append("<li id=" + fid + "><a>" + beerdata[i].food_pairing[ii] + "</a></li>").on("click", "#" + fid, function (e) {                        
                         e.preventDefault();
@@ -111,6 +124,7 @@ $(document).ready(function () {
                         var food_item = $(this).text();
                         get_spoonacular(food_item, $(e.target).parent().parent().attr("id"));                    
                     });
+                    // $("#food-pairing" + i).append("<li id=" + fid + "><a>" + beerdata[i].food_pairing[ii] + "</a></li>").on("click", "#" + fid, liHandle);
                 }
             }
         })
