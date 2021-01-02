@@ -3,7 +3,7 @@
 
 ## Beer-Gourmet
 
-![](\images\eximage.jpg)
+![](./images/eximage.JPG)
 ```
 Thirsty and hungry?  Look no further than this site to select any beer with a side!  
 Search for your favorite beers from a selection of malts, hops or flavors.  Hungry, no problem.  
@@ -21,7 +21,7 @@ The application framework for this site is by [Foundation](https://get.foundatio
 ## Application Direct Link Hosted by Github
 
 [Beer-Gourmet](https://jenryval.github.io/Beer-Gourmet/)
-
+[GitHub Location](https://github.com/jenryval/Beer-Gourmet)
 
 ## Contributors
 
