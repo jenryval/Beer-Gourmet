@@ -103,3 +103,7 @@ h2 {
   margin: 4px;
   /* color:#D58A37; */
 }
+
+.sticky.is-anchored {
+  position: relative;
+}
