@@ -24,7 +24,6 @@ $(document).ready(function () {
     // have a couple api keys in case we hit our limit of 150 calls
     //
     // var spoonacular_key = "873062e3e17f4030a94a2f81ccdb4281";
-    //var spoonacular_api = "https://api.spoonacular.com/food/menuItems/search?apiKey=873062e3e17f4030a94a2f81ccdb4281&query=chicken%20wings"
 
     var spoonacular_api = "https://api.spoonacular.com/food/menuItems/search?apiKey=3e2a051086ed46759e25a44e4f9f6853";
     //apiKey=0eebf06b3ea84f23a5db250879af45af"
@@ -120,19 +119,8 @@ $(document).ready(function () {
 
                     fnum = i*10+ii;
                     fid = "fid" + fnum;                    
-
-                    // $("#food-pairing" + i).append("<li id=" + fid + "><a>" + beerdata[i].food_pairing[ii] + "</a></li>").on("click", "#" + fid, function (e) {                        
-                    //     e.preventDefault();
-                        
-                    //     var food_item = $(this).text();
-                    //     get_spoonacular(food_item, $(e.target).parent().parent().attr("id"));                    
-                    // });
-                    $("#food-pairing" + i).append("<li id=" + fid + "><a>" + beerdata[i].food_pairing[ii] + "</a></li>");
-                    //.on("click", "#" + fid, liHandle);
-                    // newli =  $("#food-pairing" + i);
-                    //$("#food-pairing" + i).on("click", "#" + fid, liHandle);
-                    // newli.on("click", "#" + fid, liHandle);
-                    
+                
+                    $("#food-pairing" + i).append("<li id=" + fid + "><a>" + beerdata[i].food_pairing[ii] + "</a></li>");                   
                 }
             }
         })
