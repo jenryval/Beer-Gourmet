@@ -29,8 +29,6 @@ $(document).ready(function () {
     //apiKey=0eebf06b3ea84f23a5db250879af45af"
     //apiKey=e5026b852b45431fa8cd0c9b4ece21ba"
 
-    // var newli;
-
     //
     //define the li event as a variable
     
