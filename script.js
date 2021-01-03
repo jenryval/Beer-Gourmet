@@ -134,7 +134,6 @@ $(document).ready(function () {
         var query_string = spoonacular_api;
         query_string = query_string + "&query=" + menu_item;
 
-        var r = new RegExp("\d+");
         var beer_num = beer_obj.match(/\d+/g).map(Number);
 
         $("#restaurant" + beer_num).empty();
@@ -152,7 +151,6 @@ $(document).ready(function () {
             for (var i = 0; i < max_restaurant; i++) {
 
                 $("#restaurant" + beer_num).append("<li class='fa fa-cutlery'>" + "  " + fooddata.menuItems[i].restaurantChain + "  </li>");
-
             }            
         })
     }
