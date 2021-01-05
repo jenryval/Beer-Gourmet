@@ -180,7 +180,7 @@ $(document).ready(function () {
         beer_type = $(this).text();
 
         if (beer_type.includes("Wheaty")) {
-            beer_type_num = 3;                
+            beer_type_num = 3;       
             get_punkbeer("", "Wheat");
         }
         else if (beer_type.includes("Chocolate")) {
@@ -202,6 +202,5 @@ $(document).ready(function () {
     })
 
     $(document).on("click", ".callout li", liHandle);
-   
-})
 
+})
